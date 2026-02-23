@@ -81,5 +81,37 @@ function name()
     
 }
 console.log(name());
+/// Memeory
+// types of memory --->
+//1.stack = used for primitive data types
+//2.Heap = used for non primitive
+
+let myYT = "Sam";
+ //newMyYT = myYT;
+let newMyYT = "Samu";
+console.log(myYT);
+console.log(newMyYT);
+
+//stack memeory used for primitive datatype like 
+//it means copy of value is uesed
+//when we assign one varibale to  another a copy is made
+//so changing one does noy affect the others
+
+//Heap memeoy == used for non primitive data tpyes like object,function 
+//give refernce
+let user1 = {fanme : "Samiksha",age : 25,id : 75};
+let user2 = user1;
+user2.id = 78;
+console.log(user1.id);
+console.log(user2.id);
+
+//objects are stored in heap memeory
+//when we assign one Object to another varibale refrnce is copied not the CSSMathValue
+//if we change one both values are changed
+
+
+
+
+
 
 

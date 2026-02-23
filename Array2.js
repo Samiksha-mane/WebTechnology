@@ -40,10 +40,12 @@ let score1 = 100;
 let score2 = 200;
 let score3 = 300;
 console.log(Array.of(score1,score2,score3));
-// create new array from given value..converts value
-//array from = convetrs iteratbles
+// create new array from given value..array.of = converts value
+//array from = convetrs iteratble into array
 
-
+//flat - converts nested array into single lavel array
+//infity = faltens all level
+// 1 = flatens only one all
 
 
 
