@@ -61,7 +61,7 @@ input.addEventListener("input", () => {
         clearInterval(interval);
         interval = null;
 
-        status.textContent = "Completed 🎉";
+        status.textContent = "Completed!!";
 
         input.disabled = true;
     }

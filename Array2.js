@@ -16,7 +16,7 @@ console.log(you);
 const y = you.flat(Infinity);//how deep a nested array should be flatened
 //deaflut value is 1
 console.log(y);
-// infinity = flantens all levels no matter hoe deep it
+// infinity = flantens all levels no matter how deep it
 
 const y1 = you.flat(1);
 console.log(y1);

@@ -1,33 +1,55 @@
-// Select elements
-let input = document.getElementById("taskInput");
-let button = document.getElementById("addBtn");
-let list = document.getElementById("taskList");
+// Background Color Change
+function changeColor() {
 
-// Add task function
-button.addEventListener("click", function () {
+    let colors = ["red", "green", "blue", "yellow", "pink"];
+    let random = Math.floor(Math.random() * colors.length);
 
-    let taskText = input.value;
+    document.body.style.backgroundColor = colors[random];
+}
 
-    if (taskText === "") {
-        alert("Please enter a task");
-        return;
+
+// Dark Mode
+function darkMode() {
+    document.body.classList.toggle("dark");
+}
+
+
+// Show / Hide Text
+function toggleText() {
+
+    let msg = document.getElementById("message");
+
+    if (msg.style.display === "none") {
+        msg.style.display = "block";
+    } else {
+        msg.style.display = "none";
     }
+}
 
-    // Create li
-    let li = document.createElement("li");
-    li.textContent = taskText;
 
-    // Create delete button
-    let deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "X";
+// Counter
+let count = 0;
 
-    // Delete functionality
-    deleteBtn.addEventListener("click", function () {
-        li.remove();
-    });
+function increase() {
+    count++;
+    document.getElementById("count").textContent = count;
+}
 
-    li.appendChild(deleteBtn);
-    list.appendChild(li);
+function decrease() {
+    count--;
+    document.getElementById("count").textContent = count;
+}
 
-    input.value = "";
-});
+
+// Character Counter
+function countChar() {
+
+    let text = document.getElementById("text").value;
+    document.getElementById("charCount").textContent = text.length;
+}
+
+
+// Redirect
+function goHome() {
+    window.location.href = "index.html";
+}

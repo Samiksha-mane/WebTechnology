@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Events Demo</title>
+
+    <style>
+        body {
+            background-color: #414141;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 15px;
+        }
+
+        img {
+            width: 200px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        a {
+            color: lightblue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Amazing Images (Click to Remove)</h2>
+
+    <ul id="images">
+        <li>
+            <img id="photoshop"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+                alt="Photoshop Logo">
+        </li>
+
+        <li>
+            <img id="japan"
+                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                alt="Mount Fuji">
+        </li>
+
+        <li>
+            <img id="Nature"
+                src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b"
+                alt="Nature Image">
+        </li>
+
+        <li>
+            <img id="photoman"
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                alt="Photographer">
+        </li>
+
+        <li>
+            <img id="tiger"
+                src="https://images.unsplash.com/photo-1546182990-dffeafbe841d"
+                alt="Tiger"
+                onclick="alert('hey I am tiger')">
+                
+        </li>
+
+        <li>
+            <a href="https://google.com" id="google">Visit Google</a>
+        </li>
+    </ul>
+  </body>
+  <script>
+    document.getElementById('photoshop').onclick= function()
+    {
+        alert('heyyyyy!');
+    }
+    document.getElementById('japan').addEventListener('click',function(e)
+    {
+        console.log(e);
+    },false);
+    //Event propagation
+    document.getElementById('images').addEventListener('click',function(e)
+    {
+        console.log('clicking inside the ul');
+    },true);
+    document.getElementById('photoshop').addEventListener('click',function()
+    {
+        console.log('clicking on photoshop');
+    },false);
+    document.getElementById('google').addEventListener('click',function(e)
+    {
+        console.log("Google cilcked");
+        e.preventDefault();
+    }
+);
+
+  </script>
+  </html>
+  <!--Event is an action that happens in a browser
+  ex = clicling a button,moving  mpuse,pressing key,submitting form and loading Page
+  JavaScript can detect this events and respode to them
+  types of events=mouse event,keybord event and broswer event
+  IN mouse event = click,dbl click,mouse over,mouse out
+  IN keyborad event = key down and key up
+  IN broswer events = load,resize and scroll
+  onclick="alert('hey I am tiger')"> == thi is not a good way 
+  html should contain strure and js contain logic
+  so mixing those is a bad practice
+
+  document.getElementById('photoshop').onclick= function()
+    {
+        alert('heyyyyy!');
+    }
+select element assign function to click event 
+when click,function run
+the problem is that only one event can be assigned 
+it can not handel mutiple listner properly 
+jQueery,Type timestamp,defalut prevented,targert source elemet current targert,
+client X,client y,screen x,screen y ,alt key,control key,shift key
+
+AddEventListner ia a js menthoduse to attach an event handler to an html element
+so that specific funtion run  when a particular event is occur
+
+event propagation
+event goes to inner element to paraent an parent to document
+child to parent == bubling
+true == event capturing = parent to child

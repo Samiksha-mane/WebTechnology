@@ -1,20 +1,152 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple To Do App</title>
-    <link rel="stylesheet" href="style.css">
+    <title>All in One Website</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        nav button {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .dark {
+            background: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>My To Do List</h1>
+<h1>My Beginner Website</h1>
 
-        <input type="text" id="taskInput" placeholder="Enter task">
-        <button id="addBtn">Add Task</button>
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('tools')">Tools</button>
+    <button onclick="showSection('about')">About</button>
+</nav>
 
-        <ul id="taskList"></ul>
-    </div>
 
-    <script src="script.js"></script>
+<!-- HOME -->
+<div id="home" class="section">
+
+    <h2>Home Section</h2>
+
+    <button onclick="changeColor()">Change Background</button>
+    <button onclick="darkMode()">Dark Mode</button>
+
+    <p id="message">Hello..!</p>
+    <button onclick="toggleText()">Show / Hide</button>
+
+</div>
+
+
+<!-- TOOLS -->
+<div id="tools" class="section">
+
+    <h2>Counter</h2>
+
+    <h1 id="count">0</h1>
+
+    <button onclick="increase()">+</button>
+    <button onclick="decrease()">-</button>
+
+
+    <h2>Character Counter</h2>
+
+    <textarea id="text" oninput="countChar()"></textarea>
+
+    <p>Characters: <span id="charCount">0</span></p>
+
+</div>
+
+
+<!-- ABOUT -->
+<div id="about" class="section">
+
+    <h2>About</h2>
+    <p>This is a beginner project using HTML,CSS,JavaScript and DOM.</p>
+
+</div>
+
+
+<script>
+
+// Show Section
+function showSection(id) {
+
+    let sections = document.querySelectorAll(".section");
+
+    sections.forEach(sec => sec.style.display = "none");
+
+    document.getElementById(id).style.display = "block";
+}
+
+
+// Default show home
+showSection("home");
+
+
+// Background Color
+function changeColor() {
+
+    let colors = ["red", "green", "blue", "yellow"];
+    let random = Math.floor(Math.random() * colors.length);
+
+    document.body.style.backgroundColor = colors[random];
+}
+
+
+// Dark Mode
+function darkMode() {
+    document.body.classList.toggle("dark");
+}
+
+
+// Show Hide Text
+function toggleText() {
+
+    let msg = document.getElementById("message");
+
+    if (msg.style.display === "none") {
+        msg.style.display = "block";
+    } else {
+        msg.style.display = "none";
+    }
+}
+
+
+// Counter
+let count = 0;
+
+function increase() {
+    count++;
+    document.getElementById("count").textContent = count;
+}
+
+function decrease() {
+    count--;
+    document.getElementById("count").textContent = count;
+}
+
+
+// Character Counter
+function countChar() {
+
+    let text = document.getElementById("text").value;
+    document.getElementById("charCount").textContent = text.length;
+}
+
+</script>
+
 </body>
 </html>

@@ -1,0 +1,45 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f4f6f9;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #0d47a1;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px;
+  background: #1976d2;
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px;
+}

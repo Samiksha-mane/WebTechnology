@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lost & Found Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Lost & Found Portal</h1>
+
+<div class="form-container">
+  <select id="type">
+    <option value="">Select Type</option>
+    <option value="Lost">Lost</option>
+    <option value="Found">Found</option>
+  </select>
+
+  <input type="text" id="name" placeholder="Item Name">
+  <input type="text" id="description" placeholder="Description">
+  <input type="text" id="contact" placeholder="Contact Info">
+
+  <button onclick="addItem()">Submit</button>
+  <p id="message"></p>
+</div>
+
+<div class="filters">
+  <button onclick="setFilter('All')">All</button>
+  <button onclick="setFilter('Lost')">Lost</button>
+  <button onclick="setFilter('Found')">Found</button>
+</div>
+
+<div class="search">
+  <input type="text" id="searchInput" placeholder="Search item...">
+  <button onclick="searchItems()">Search</button>
+</div>
+
+<h2>Items List</h2>
+<div id="items"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
